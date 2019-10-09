@@ -1058,7 +1058,7 @@ namespace ACE.Server.WorldObjects
             else if (spell.MetaSpellType == SpellType.Enchantment)
             {
 
-                // Enable creature (NPC) cast on player target banes/impen
+                // Enable creature (NPC) cast on player target banes/impen 
                 if (spell.IsImpenBaneType)
                 {
                     var casterCreature = this as Creature;
