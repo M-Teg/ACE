@@ -1057,6 +1057,25 @@ namespace ACE.Server.WorldObjects
             }
             else if (spell.MetaSpellType == SpellType.Enchantment)
             {
+
+                // Enable creature (NPC) cast on player target banes/impen
+                if (spell.IsImpenBaneType)
+                {
+                    var casterCreature = this as Creature;
+                    var targetPlayer = target as Player;
+
+                    if (casterCreature != targetPlayer && targetPlayer != null)
+                    {
+                        var items = targetPlayer.EquippedObjects.Values.Where(i => (i.WeenieType == WeenieType.Clothing || i.IsShield) && i.IsEnchantable);
+
+                        foreach (var item in items)
+                        {
+                            if (item != null)
+                                enchantmentStatus = ItemMagic(item, spell);
+                        }
+                    }
+                }
+
                 if (itemCaster != null)
                     return CreateEnchantment(target, itemCaster, spell, equip);
 

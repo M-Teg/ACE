@@ -206,46 +206,46 @@ namespace ACE.Server.WorldObjects
 
         public static Dictionary<AugmentationType, int> MaxAugs = new Dictionary<AugmentationType, int>()
         {
-            { AugmentationType.Strength, 10 },          // attributes in shared group
-            { AugmentationType.Endurance, 10 },
-            { AugmentationType.Coordination, 10 },
-            { AugmentationType.Quickness, 10 },
-            { AugmentationType.Focus, 10 },
-            { AugmentationType.Self, 10 },
+            { AugmentationType.Strength, 100 },          // attributes in shared group
+            { AugmentationType.Endurance, 100 },         // can exceed retail - attributes still cap at 100 innate - hard coded in .dat file
+            { AugmentationType.Coordination, 100 },
+            { AugmentationType.Quickness, 100 },
+            { AugmentationType.Focus, 100 },
+            { AugmentationType.Self, 100 },
             { AugmentationType.Salvage, 1 },
             { AugmentationType.ItemTinkering, 1 },
             { AugmentationType.ArmorTinkering, 1 },
             { AugmentationType.MagicItemTinkering, 1 },
             { AugmentationType.WeaponTinkering, 1 },
-            { AugmentationType.PackSlot, 1 },
-            { AugmentationType.BurdenLimit, 5 },
+            { AugmentationType.PackSlot, 5 },            // can exceed retail - may or may not be limited
+            { AugmentationType.BurdenLimit, 10 },        // can exceed retail but no bonus after 5x
             { AugmentationType.DeathItemLoss, 3 },
             { AugmentationType.DeathSpellLoss, 1 },
             { AugmentationType.CritProtect, 1 },
             { AugmentationType.BonusXP, 1 },
-            { AugmentationType.BonusSalvage, 4 },
-            { AugmentationType.ImbueChance, 1 },
+            { AugmentationType.BonusSalvage, 10 },       // can exceed retail - unsure if any bonus past 4x
+            { AugmentationType.ImbueChance, 10 },        // can exceed retail - unsure if any bonus past 1x - char data report remains at 5%
             { AugmentationType.RegenBonus, 2 },
-            { AugmentationType.SpellDuration, 5 },
-            { AugmentationType.ResistSlash, 2 },        // resistances in shared group
-            { AugmentationType.ResistPierce, 2 },
-            { AugmentationType.ResistBludgeon, 2 },
-            { AugmentationType.ResistAcid, 2 },
-            { AugmentationType.ResistFire, 2 },
-            { AugmentationType.ResistCold, 2 },
-            { AugmentationType.ResistElectric, 2 },
+            { AugmentationType.SpellDuration, 10 },      // can exceed retail - each aug adds appropriate % beyond 5x
+            { AugmentationType.ResistSlash, 70 },        // resistances in shared group
+            { AugmentationType.ResistPierce, 70 },       // can exceed retail but possibly no bonus over 2x (20%)
+            { AugmentationType.ResistBludgeon, 70 },
+            { AugmentationType.ResistAcid, 70 },
+            { AugmentationType.ResistFire, 70 },
+            { AugmentationType.ResistCold, 70 },
+            { AugmentationType.ResistElectric, 70 },
             { AugmentationType.FociCreature, 1 },
             { AugmentationType.FociItem, 1 },
             { AugmentationType.FociLife, 1 },
             { AugmentationType.FociWar, 1 },
             { AugmentationType.CritChance, 1 },
             { AugmentationType.CritDamage, 1 },
-            { AugmentationType.Melee, 1 },
-            { AugmentationType.Missile, 1 },
-            { AugmentationType.Magic, 1 },
+            { AugmentationType.Melee, 1 },               // can exceed retail but no bonus after 1x (+10 point)
+            { AugmentationType.Missile, 1 },             // can exceed retail but no bonus after 1x (+10 point)
+            { AugmentationType.Magic, 1 },               // can exceed retail but no bonus after 1x (+10 point)
             { AugmentationType.Damage, 1 },
             { AugmentationType.DamageResist, 1 },
-            { AugmentationType.AllStats, 1 },
+            { AugmentationType.AllStats, 1 },            // can exceed retail but no bonus after 1x (+5 point)
             { AugmentationType.FociVoid, 1 },
         };
 

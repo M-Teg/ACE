@@ -224,6 +224,16 @@ namespace ACE.Server.WorldObjects.Managers
             entry.SpellCategory = (ushort)spell.Category;
             entry.PowerLevel = spell.Power;
 
+            /// <summary>
+            /// Universal spell duration = 1 year
+            ///entry.Duration = 31536000.0f;
+            /// </summary>
+
+            /// <summary>
+            /// Universal spell duration = 24 hours
+            ///entry.Duration = 86400.0f;
+            /// </summary>
+
             // should default duration be 0 or -1 here?
             // changed from spellBase -> spell for void..
             if (caster is Creature)
@@ -231,7 +241,17 @@ namespace ACE.Server.WorldObjects.Managers
                 entry.Duration = spell.Duration;
 
                 if (caster is Player player && player.AugmentationIncreasedSpellDuration > 0 && spell.DotDuration == 0)
-                    entry.Duration *= 1.0f + player.AugmentationIncreasedSpellDuration * 0.2f;
+                {
+                    /// <summary>
+                    /// Retail: Archmage's Endurance Augmentation increases spell duration by 20% (+ original spell duration.)
+                    /// </ summary >
+                    entry.Duration *= 1.0f + player.AugmentationIncreasedSpellDuration * 3.0f;
+                }
+                else
+                {
+                    // Change NPC buff duration(s) to 24 hours.
+                    entry.Duration *= 16.0f;
+                }
             }
             else
             {
