@@ -244,7 +244,7 @@ namespace ACE.Server.WorldObjects.Managers
                 {
                     /// <summary>
                     /// Retail: Archmage's Endurance Augmentation increases spell duration by 20% (+ original spell duration.)
-                    /// </ summary >
+                    /// </summary >
                     entry.Duration *= 1.0f + player.AugmentationIncreasedSpellDuration * 3.0f;
                 }
                 else
