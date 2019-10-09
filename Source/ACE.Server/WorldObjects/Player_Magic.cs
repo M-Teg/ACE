@@ -731,7 +731,7 @@ namespace ACE.Server.WorldObjects
                                 // var item = creatureTarget.EquippedObjects.Values.FirstOrDefault(i => i.IsShield && i.IsEnchantable);
                                 // if (item != null)
                                 
-                                // Enable player cast on player target banes/impen (caster != target)
+                                // Enable player cast on player target banes/impen (caster != target) 
                                 var items = creatureTarget.EquippedObjects.Values.Where(i => (i.WeenieType == WeenieType.Clothing || i.IsShield) && i.IsEnchantable);
 
                                 foreach (var item in items)
